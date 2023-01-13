@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <!--  <marquee width="100%" direction="right" height="100%">
+            <h3>Listings on the website</h3>
+            </marquee> -->
+            <div class="row">
+                {% for property in team %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="listing-image">
+                                <img src="{{ property.playerImage.url }}" alt="property image" class="w-100" width="200" height="200" />
+                            </div>
+                            <span class="" style="font-size: 15px"><b>Name:</b> {{ property.teamName }}</span><br>
+                            <span class="" style="font-size: 15px"><b>Description:</b> {{ property.playerName }}</span><br>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
